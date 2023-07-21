@@ -113,14 +113,15 @@ Public Class Form1
 
     ' Hook
 
-    ' 建立鍵盤鉤子的委派類型
+    ' 委派類型
     Private Delegate Function KeyboardHookDelegate(ByVal nCode As Integer, ByVal wParam As Integer, ByRef lParam As KBDLLHOOKSTRUCT) As Integer
 
-    ' 建立鍵盤鉤子的鉤子ID和委派實例
+    ' 鉤子ID和委派實例
     Private Shared HookID As IntPtr = IntPtr.Zero
-    Private Shared KeyboardHook As KeyboardHookDelegate
+    Private KeyboardHook As KeyboardHookDelegate
 
     ' 鍵盤事件代碼
+    Private Const WH_KEYBOARD_LL As Integer = 13
     Private Const WM_KEYDOWN As Integer = &H100
     Private Const WM_SYSKEYDOWN As Integer = &H104
 
@@ -147,11 +148,6 @@ Public Class Form1
     ' 呼叫下一個鉤子
     <DllImport("user32.dll", CharSet:=CharSet.Auto, SetLastError:=True)>
     Private Shared Function CallNextHookEx(ByVal hhk As IntPtr, ByVal nCode As Integer, ByVal wParam As Integer, ByRef lParam As KBDLLHOOKSTRUCT) As Integer
-    End Function
-
-    ' 取得目前執行的執行緒ID
-    <DllImport("kernel32.dll", CharSet:=CharSet.Auto, SetLastError:=True)>
-    Private Shared Function GetCurrentThreadId() As UInteger
     End Function
 
     ' 處理鍵盤事件
@@ -183,7 +179,7 @@ Public Class Form1
         Dim threadId As UInteger = GetCurrentThreadId()
 
         ' 設置鍵盤鉤子
-        HookID = SetWindowsHookEx(13, KeyboardHook, IntPtr.Zero, threadId)
+        HookID = SetWindowsHookEx(WH_KEYBOARD_LL, KeyboardHook, IntPtr.Zero, 0)
     End Sub
 
     ' 停止鍵盤鉤子
@@ -191,4 +187,9 @@ Public Class Form1
         ' 解除鍵盤鉤子
         UnhookWindowsHookEx(HookID)
     End Sub
+
+    ' 取得目前執行的執行緒ID
+    Private Function GetCurrentThreadId() As UInteger
+        Return CUInt(System.Threading.Thread.CurrentThread.ManagedThreadId)
+    End Function
 End Class
