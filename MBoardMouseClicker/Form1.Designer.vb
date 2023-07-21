@@ -155,7 +155,7 @@ Partial Class Form1
         '
         'Guna2PictureBox1
         '
-        Me.Guna2PictureBox1.Image = Global.MBoardMouseClicker.My.Resources.Resources.MBoard__1_
+        Me.Guna2PictureBox1.Image = Global.MBoardMouseClicker.My.Resources.Resources.MBoard
         Me.Guna2PictureBox1.ImageRotate = 0!
         Me.Guna2PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
