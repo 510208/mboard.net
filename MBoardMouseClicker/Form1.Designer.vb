@@ -26,11 +26,14 @@ Partial Class Form1
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
         Me.pnlTitleBar = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lblSettingInfo = New System.Windows.Forms.Label()
+        Me.lblClickEnabled = New System.Windows.Forms.Label()
+        Me.imgTrafficLight = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbbButton = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnlHeader = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
@@ -43,8 +46,9 @@ Partial Class Form1
         Me.tmrClicker = New System.Windows.Forms.Timer(Me.components)
         Me.Guna2ColorTransition1 = New Guna.UI2.WinForms.Guna2ColorTransition(Me.components)
         Me.pnlTitleBar.SuspendLayout()
+        CType(Me.imgTrafficLight, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Guna2Panel1.SuspendLayout()
+        Me.pnlHeader.SuspendLayout()
         CType(Me.pudPauseDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -60,11 +64,14 @@ Partial Class Form1
         '
         'pnlTitleBar
         '
+        Me.pnlTitleBar.Controls.Add(Me.lblSettingInfo)
+        Me.pnlTitleBar.Controls.Add(Me.lblClickEnabled)
+        Me.pnlTitleBar.Controls.Add(Me.imgTrafficLight)
         Me.pnlTitleBar.Controls.Add(Me.Label3)
         Me.pnlTitleBar.Controls.Add(Me.Label2)
         Me.pnlTitleBar.Controls.Add(Me.cbbButton)
         Me.pnlTitleBar.Controls.Add(Me.Guna2PictureBox1)
-        Me.pnlTitleBar.Controls.Add(Me.Guna2Panel1)
+        Me.pnlTitleBar.Controls.Add(Me.pnlHeader)
         Me.pnlTitleBar.Controls.Add(Me.Label1)
         Me.pnlTitleBar.Controls.Add(Me.pudPauseDown)
         Me.pnlTitleBar.Controls.Add(Me.btnExit)
@@ -73,13 +80,46 @@ Partial Class Form1
         Me.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlTitleBar.Location = New System.Drawing.Point(0, 0)
         Me.pnlTitleBar.Name = "pnlTitleBar"
-        Me.pnlTitleBar.Size = New System.Drawing.Size(274, 321)
+        Me.pnlTitleBar.Size = New System.Drawing.Size(274, 283)
         Me.pnlTitleBar.TabIndex = 2
+        '
+        'lblSettingInfo
+        '
+        Me.lblSettingInfo.BackColor = System.Drawing.Color.Transparent
+        Me.lblSettingInfo.Font = New System.Drawing.Font("微軟正黑體", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.lblSettingInfo.Location = New System.Drawing.Point(92, 76)
+        Me.lblSettingInfo.Name = "lblSettingInfo"
+        Me.lblSettingInfo.Size = New System.Drawing.Size(170, 22)
+        Me.lblSettingInfo.TabIndex = 17
+        Me.lblSettingInfo.Text = "N/A"
+        Me.lblSettingInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblClickEnabled
+        '
+        Me.lblClickEnabled.Font = New System.Drawing.Font("微軟正黑體", 17.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.lblClickEnabled.Location = New System.Drawing.Point(92, 45)
+        Me.lblClickEnabled.Name = "lblClickEnabled"
+        Me.lblClickEnabled.Size = New System.Drawing.Size(115, 31)
+        Me.lblClickEnabled.TabIndex = 16
+        Me.lblClickEnabled.Text = "中斷連點"
+        Me.lblClickEnabled.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'imgTrafficLight
+        '
+        Me.imgTrafficLight.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.imgTrafficLight.Image = Global.MBoardMouseClicker.My.Resources.Resources.redLight
+        Me.imgTrafficLight.ImageRotate = 0!
+        Me.imgTrafficLight.Location = New System.Drawing.Point(16, 45)
+        Me.imgTrafficLight.Name = "imgTrafficLight"
+        Me.imgTrafficLight.Size = New System.Drawing.Size(69, 69)
+        Me.imgTrafficLight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imgTrafficLight.TabIndex = 15
+        Me.imgTrafficLight.TabStop = False
         '
         'Label3
         '
         Me.Label3.Font = New System.Drawing.Font("微軟正黑體", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label3.Location = New System.Drawing.Point(232, 28)
+        Me.Label3.Location = New System.Drawing.Point(232, 117)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(30, 33)
         Me.Label3.TabIndex = 14
@@ -89,7 +129,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("微軟正黑體", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 67)
+        Me.Label2.Location = New System.Drawing.Point(12, 156)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(109, 36)
         Me.Label2.TabIndex = 13
@@ -108,7 +148,7 @@ Partial Class Form1
         Me.cbbButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbbButton.ItemHeight = 30
         Me.cbbButton.Items.AddRange(New Object() {"左鍵", "中鍵", "右鍵"})
-        Me.cbbButton.Location = New System.Drawing.Point(127, 67)
+        Me.cbbButton.Location = New System.Drawing.Point(127, 156)
         Me.cbbButton.Name = "cbbButton"
         Me.cbbButton.Size = New System.Drawing.Size(135, 36)
         Me.cbbButton.TabIndex = 12
@@ -124,16 +164,17 @@ Partial Class Form1
         Me.Guna2PictureBox1.TabIndex = 11
         Me.Guna2PictureBox1.TabStop = False
         '
-        'Guna2Panel1
+        'pnlHeader
         '
-        Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2ControlBox2)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2ControlBox1)
-        Me.Guna2Panel1.Controls.Add(Me.btnEnd)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(274, 25)
-        Me.Guna2Panel1.TabIndex = 10
+        Me.pnlHeader.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.pnlHeader.Controls.Add(Me.Guna2ControlBox2)
+        Me.pnlHeader.Controls.Add(Me.Guna2ControlBox1)
+        Me.pnlHeader.Controls.Add(Me.btnEnd)
+        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
+        Me.pnlHeader.Name = "pnlHeader"
+        Me.pnlHeader.Size = New System.Drawing.Size(274, 25)
+        Me.pnlHeader.TabIndex = 10
         '
         'Guna2HtmlLabel1
         '
@@ -161,6 +202,7 @@ Partial Class Form1
         '
         Me.Guna2ControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox
+        Me.Guna2ControlBox1.Enabled = False
         Me.Guna2ControlBox1.FillColor = System.Drawing.Color.Navy
         Me.Guna2ControlBox1.IconColor = System.Drawing.Color.White
         Me.Guna2ControlBox1.Location = New System.Drawing.Point(207, 0)
@@ -181,7 +223,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("微軟正黑體", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 28)
+        Me.Label1.Location = New System.Drawing.Point(12, 117)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(109, 33)
         Me.Label1.TabIndex = 7
@@ -194,7 +236,7 @@ Partial Class Form1
         Me.pudPauseDown.BorderRadius = 15
         Me.pudPauseDown.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.pudPauseDown.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.pudPauseDown.Location = New System.Drawing.Point(127, 28)
+        Me.pudPauseDown.Location = New System.Drawing.Point(127, 117)
         Me.pudPauseDown.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.pudPauseDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.pudPauseDown.Name = "pudPauseDown"
@@ -214,7 +256,7 @@ Partial Class Form1
         Me.btnExit.FillColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnExit.Font = New System.Drawing.Font("微軟正黑體", 11.25!)
         Me.btnExit.ForeColor = System.Drawing.Color.White
-        Me.btnExit.Location = New System.Drawing.Point(147, 148)
+        Me.btnExit.Location = New System.Drawing.Point(147, 237)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(115, 33)
         Me.btnExit.TabIndex = 4
@@ -231,7 +273,7 @@ Partial Class Form1
         Me.btnStop.FillColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnStop.Font = New System.Drawing.Font("微軟正黑體", 11.25!)
         Me.btnStop.ForeColor = System.Drawing.Color.White
-        Me.btnStop.Location = New System.Drawing.Point(12, 148)
+        Me.btnStop.Location = New System.Drawing.Point(12, 237)
         Me.btnStop.Name = "btnStop"
         Me.btnStop.Size = New System.Drawing.Size(129, 33)
         Me.btnStop.TabIndex = 3
@@ -247,7 +289,7 @@ Partial Class Form1
         Me.btnStart.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnStart.Font = New System.Drawing.Font("微軟正黑體", 11.25!)
         Me.btnStart.ForeColor = System.Drawing.Color.White
-        Me.btnStart.Location = New System.Drawing.Point(12, 109)
+        Me.btnStart.Location = New System.Drawing.Point(12, 198)
         Me.btnStart.Name = "btnStart"
         Me.btnStart.Size = New System.Drawing.Size(250, 33)
         Me.btnStart.TabIndex = 2
@@ -264,14 +306,15 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(274, 321)
+        Me.ClientSize = New System.Drawing.Size(274, 283)
         Me.Controls.Add(Me.pnlTitleBar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.pnlTitleBar.ResumeLayout(False)
+        CType(Me.imgTrafficLight, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Guna2Panel1.ResumeLayout(False)
+        Me.pnlHeader.ResumeLayout(False)
         CType(Me.pudPauseDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -287,7 +330,7 @@ Partial Class Form1
     Friend WithEvents pudPauseDown As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents Label1 As Label
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnlHeader As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2ControlBox2 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
@@ -296,4 +339,7 @@ Partial Class Form1
     Friend WithEvents cbbButton As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents lblSettingInfo As Label
+    Friend WithEvents lblClickEnabled As Label
+    Friend WithEvents imgTrafficLight As Guna.UI2.WinForms.Guna2PictureBox
 End Class

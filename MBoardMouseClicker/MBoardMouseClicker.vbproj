@@ -131,5 +131,11 @@
   <ItemGroup>
     <None Include="Resources\MBoard %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greenLight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redLight.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
