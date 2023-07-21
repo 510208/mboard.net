@@ -5,6 +5,7 @@ Public Class Form1
 
     Dim nOldWndLeft, nOldWndTop, nClickX, nClickY As Integer
     Dim clickButton As Integer
+    Dim hookButton = Keys.F6
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         End
@@ -153,7 +154,7 @@ Public Class Form1
     ' 處理鍵盤事件
     Private Function KeyboardHookProc(ByVal nCode As Integer, ByVal wParam As Integer, ByRef lParam As KBDLLHOOKSTRUCT) As Integer
         ' 檢查是否按下F1鍵
-        If nCode = 0 AndAlso (wParam = WM_KEYDOWN OrElse wParam = WM_SYSKEYDOWN) AndAlso lParam.vkCode = Keys.F1 Then
+        If nCode = 0 AndAlso (wParam = WM_KEYDOWN OrElse wParam = WM_SYSKEYDOWN) AndAlso lParam.vkCode = Keys.F6 Then
             ' 執行 checkClick 函數
             checkClick()
         End If
@@ -168,6 +169,10 @@ Public Class Form1
         btnStart.Enabled = Not (btnStart.Enabled)
         btnStop.Enabled = Not (btnStop.Enabled)
         tmrClicker.Enabled = Not (tmrClicker.Enabled)
+    End Sub
+
+    Private Sub cbbQuick_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbbQuick.SelectedIndexChanged
+        hookButton =
     End Sub
 
     ' 啟動鍵盤鉤子

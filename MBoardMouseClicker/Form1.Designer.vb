@@ -45,6 +45,8 @@ Partial Class Form1
         Me.btnStart = New Guna.UI2.WinForms.Guna2Button()
         Me.tmrClicker = New System.Windows.Forms.Timer(Me.components)
         Me.Guna2ColorTransition1 = New Guna.UI2.WinForms.Guna2ColorTransition(Me.components)
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cbbQuick = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.pnlTitleBar.SuspendLayout()
         CType(Me.imgTrafficLight, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,6 +66,8 @@ Partial Class Form1
         '
         'pnlTitleBar
         '
+        Me.pnlTitleBar.Controls.Add(Me.Label4)
+        Me.pnlTitleBar.Controls.Add(Me.cbbQuick)
         Me.pnlTitleBar.Controls.Add(Me.lblSettingInfo)
         Me.pnlTitleBar.Controls.Add(Me.lblClickEnabled)
         Me.pnlTitleBar.Controls.Add(Me.imgTrafficLight)
@@ -80,7 +84,7 @@ Partial Class Form1
         Me.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlTitleBar.Location = New System.Drawing.Point(0, 0)
         Me.pnlTitleBar.Name = "pnlTitleBar"
-        Me.pnlTitleBar.Size = New System.Drawing.Size(274, 283)
+        Me.pnlTitleBar.Size = New System.Drawing.Size(274, 327)
         Me.pnlTitleBar.TabIndex = 2
         '
         'lblSettingInfo
@@ -256,7 +260,7 @@ Partial Class Form1
         Me.btnExit.FillColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnExit.Font = New System.Drawing.Font("微軟正黑體", 11.25!)
         Me.btnExit.ForeColor = System.Drawing.Color.White
-        Me.btnExit.Location = New System.Drawing.Point(147, 237)
+        Me.btnExit.Location = New System.Drawing.Point(147, 279)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(115, 33)
         Me.btnExit.TabIndex = 4
@@ -273,7 +277,7 @@ Partial Class Form1
         Me.btnStop.FillColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnStop.Font = New System.Drawing.Font("微軟正黑體", 11.25!)
         Me.btnStop.ForeColor = System.Drawing.Color.White
-        Me.btnStop.Location = New System.Drawing.Point(12, 237)
+        Me.btnStop.Location = New System.Drawing.Point(12, 279)
         Me.btnStop.Name = "btnStop"
         Me.btnStop.Size = New System.Drawing.Size(129, 33)
         Me.btnStop.TabIndex = 3
@@ -289,7 +293,7 @@ Partial Class Form1
         Me.btnStart.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnStart.Font = New System.Drawing.Font("微軟正黑體", 11.25!)
         Me.btnStart.ForeColor = System.Drawing.Color.White
-        Me.btnStart.Location = New System.Drawing.Point(12, 198)
+        Me.btnStart.Location = New System.Drawing.Point(12, 240)
         Me.btnStart.Name = "btnStart"
         Me.btnStart.Size = New System.Drawing.Size(250, 33)
         Me.btnStart.TabIndex = 2
@@ -302,11 +306,38 @@ Partial Class Form1
         '
         Me.Guna2ColorTransition1.ColorArray = New System.Drawing.Color() {System.Drawing.Color.Red, System.Drawing.Color.Blue, System.Drawing.Color.Orange}
         '
+        'Label4
+        '
+        Me.Label4.Font = New System.Drawing.Font("微軟正黑體", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Label4.Location = New System.Drawing.Point(12, 198)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(109, 36)
+        Me.Label4.TabIndex = 19
+        Me.Label4.Text = "快速鍵(&Q)："
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'cbbQuick
+        '
+        Me.cbbQuick.BackColor = System.Drawing.Color.Transparent
+        Me.cbbQuick.BorderRadius = 15
+        Me.cbbQuick.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cbbQuick.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbbQuick.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbbQuick.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbbQuick.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.cbbQuick.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cbbQuick.ItemHeight = 30
+        Me.cbbQuick.Items.AddRange(New Object() {"F6", "F1", "F2", "F3", "F4", "F5", "F12"})
+        Me.cbbQuick.Location = New System.Drawing.Point(127, 198)
+        Me.cbbQuick.Name = "cbbQuick"
+        Me.cbbQuick.Size = New System.Drawing.Size(135, 36)
+        Me.cbbQuick.TabIndex = 18
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(274, 283)
+        Me.ClientSize = New System.Drawing.Size(274, 327)
         Me.Controls.Add(Me.pnlTitleBar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form1"
@@ -342,4 +373,6 @@ Partial Class Form1
     Friend WithEvents lblSettingInfo As Label
     Friend WithEvents lblClickEnabled As Label
     Friend WithEvents imgTrafficLight As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents cbbQuick As Guna.UI2.WinForms.Guna2ComboBox
 End Class
