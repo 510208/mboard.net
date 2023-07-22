@@ -129,9 +129,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\MBoard %281%29.png" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MBoard.ico" />
+    <None Include="Resources\info.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

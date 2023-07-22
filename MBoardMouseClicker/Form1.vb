@@ -5,9 +5,9 @@ Public Class Form1
 
     Dim nOldWndLeft, nOldWndTop, nClickX, nClickY As Integer
     Dim clickButton As Integer
-    Dim hookButton = Keys.F6
+    Dim hookButton As Keys = Keys.F6
 
-    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+    Private Sub btnExit_Click(sender As Object, e As EventArgs)
         End
     End Sub
 
@@ -42,7 +42,7 @@ Public Class Form1
     Private Sub cbbButton_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbbButton.SelectedIndexChanged
         clickButton = cbbButton.SelectedIndex
         cbbButton.Text = cbbButton.SelectedItem
-        lblSettingInfo.Text = $"{tmrClicker.Interval.ToString}/{cbbButton.SelectedItem}/SingleClick"
+        lblSettingInfo.Text = $"{tmrClicker.Interval.ToString}/{cbbButton.SelectedItem}/SingleClick/F6"
     End Sub
 
     Private Sub tmrClicker_Tick(sender As Object, e As EventArgs) Handles tmrClicker.Tick
@@ -59,7 +59,7 @@ Public Class Form1
 
     Private Sub pudPauseDown_ValueChanged(sender As Object, e As EventArgs) Handles pudPauseDown.ValueChanged
         tmrClicker.Interval = pudPauseDown.Value
-        lblSettingInfo.Text = $"{tmrClicker.Interval.ToString}/{cbbButton.Text}/SingleClick"
+        lblSettingInfo.Text = $"{tmrClicker.Interval.ToString}/{cbbButton.Text}/SingleClick/F6"
     End Sub
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
@@ -90,7 +90,7 @@ Public Class Form1
         Me.TopMost = True
         imgTrafficLight.Image = My.Resources.redLight
         lblClickEnabled.Text = "中斷連點"
-        lblSettingInfo.Text = $"{tmrClicker.Interval.ToString}/左鍵/SingleClick"
+        lblSettingInfo.Text = $"{tmrClicker.Interval.ToString}/左鍵/SingleClick/F6"
     End Sub
 
     Private Sub pnlHeader_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlHeader.MouseDown
@@ -153,7 +153,7 @@ Public Class Form1
 
     ' 處理鍵盤事件
     Private Function KeyboardHookProc(ByVal nCode As Integer, ByVal wParam As Integer, ByRef lParam As KBDLLHOOKSTRUCT) As Integer
-        ' 檢查是否按下F1鍵
+        ' 檢查是否按下F6鍵
         If nCode = 0 AndAlso (wParam = WM_KEYDOWN OrElse wParam = WM_SYSKEYDOWN) AndAlso lParam.vkCode = Keys.F6 Then
             ' 執行 checkClick 函數
             checkClick()
@@ -169,10 +169,6 @@ Public Class Form1
         btnStart.Enabled = Not (btnStart.Enabled)
         btnStop.Enabled = Not (btnStop.Enabled)
         tmrClicker.Enabled = Not (tmrClicker.Enabled)
-    End Sub
-
-    Private Sub cbbQuick_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbbQuick.SelectedIndexChanged
-        hookButton =
     End Sub
 
     ' 啟動鍵盤鉤子
