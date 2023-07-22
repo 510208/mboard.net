@@ -26,12 +26,12 @@ Partial Class frmInfobox
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btnEnd = New Guna.UI2.WinForms.Guna2ControlBox()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnlHeader = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnlHeader.SuspendLayout()
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Elipse1
@@ -60,6 +60,26 @@ Partial Class frmInfobox
         Me.btnEnd.Size = New System.Drawing.Size(33, 25)
         Me.btnEnd.TabIndex = 10
         '
+        'pnlHeader
+        '
+        Me.pnlHeader.Controls.Add(Me.Guna2PictureBox1)
+        Me.pnlHeader.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.pnlHeader.Controls.Add(Me.btnEnd)
+        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
+        Me.pnlHeader.Name = "pnlHeader"
+        Me.pnlHeader.Size = New System.Drawing.Size(210, 25)
+        Me.pnlHeader.TabIndex = 12
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.MBoardMouseClicker.My.Resources.Resources.logo
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 31)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(186, 74)
+        Me.PictureBox1.TabIndex = 15
+        Me.PictureBox1.TabStop = False
+        '
         'Guna2PictureBox1
         '
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
@@ -72,39 +92,19 @@ Partial Class frmInfobox
         Me.Guna2PictureBox1.TabIndex = 13
         Me.Guna2PictureBox1.TabStop = False
         '
-        'pnlHeader
-        '
-        Me.pnlHeader.Controls.Add(Me.Guna2PictureBox2)
-        Me.pnlHeader.Controls.Add(Me.Guna2PictureBox1)
-        Me.pnlHeader.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.pnlHeader.Controls.Add(Me.btnEnd)
-        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
-        Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(210, 25)
-        Me.pnlHeader.TabIndex = 12
-        '
-        'Guna2PictureBox2
-        '
-        Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(12, 31)
-        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(186, 74)
-        Me.Guna2PictureBox2.TabIndex = 14
-        Me.Guna2PictureBox2.TabStop = False
-        '
         'frmInfobox
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(210, 210)
+        Me.ClientSize = New System.Drawing.Size(210, 118)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.pnlHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmInfobox"
         Me.Text = "frmInfobox"
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlHeader.ResumeLayout(False)
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -114,5 +114,5 @@ Partial Class frmInfobox
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btnEnd As Guna.UI2.WinForms.Guna2ControlBox
-    Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

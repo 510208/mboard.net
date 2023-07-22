@@ -4,7 +4,7 @@ Imports System.Runtime.InteropServices
 Public Class Form1
 
     Dim nOldWndLeft, nOldWndTop, nClickX, nClickY As Integer
-    Dim clickButton As Integer
+    Dim clickButton, countClickTurn As Integer
     Dim hookButton As Keys = Keys.F6
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs)
@@ -46,6 +46,7 @@ Public Class Form1
     End Sub
 
     Private Sub tmrClicker_Tick(sender As Object, e As EventArgs) Handles tmrClicker.Tick
+        imgTrafficLight.Image = My.Resources.greenLight
         Select Case clickButton
             Case 0
                 LeftClick()
@@ -55,6 +56,8 @@ Public Class Form1
                 RightClick()
         End Select
         lblClickEnabled.Text = "運行連點"
+        countClickTurn += 1
+        lblClickTurn.Text = $"連點次數：{countClickTurn.ToString}"
     End Sub
 
     Private Sub pudPauseDown_ValueChanged(sender As Object, e As EventArgs) Handles pudPauseDown.ValueChanged
@@ -67,6 +70,8 @@ Public Class Form1
         btnStop.Enabled = True
         btnStart.Enabled = False
         imgTrafficLight.Image = My.Resources.greenLight
+        countClickTurn = 0
+        lblClickTurn.Text = "連點次數：0"
     End Sub
 
     Private Sub btnStop_Click(sender As Object, e As EventArgs) Handles btnStop.Click
@@ -91,6 +96,7 @@ Public Class Form1
         imgTrafficLight.Image = My.Resources.redLight
         lblClickEnabled.Text = "中斷連點"
         lblSettingInfo.Text = $"{tmrClicker.Interval.ToString}/左鍵/SingleClick/F6"
+        countClickTurn = 0
     End Sub
 
     Private Sub pnlHeader_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlHeader.MouseDown
@@ -166,6 +172,14 @@ Public Class Form1
     ' F1鍵被按下時執行的函數
     Private Sub checkClick()
         ' 在這裡實現按下F1鍵時的操作
+        If btnStart.Enabled Then
+            ' 在此開始連點
+            imgTrafficLight.Image = My.Resources.greenLight
+            lblClickEnabled.Text = "中斷連點"
+        Else
+            ' 在此結束連點
+            imgTrafficLight.Image = My.Resources.redLight
+        End If
         btnStart.Enabled = Not (btnStart.Enabled)
         btnStop.Enabled = Not (btnStop.Enabled)
         tmrClicker.Enabled = Not (tmrClicker.Enabled)

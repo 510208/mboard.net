@@ -45,6 +45,7 @@ Partial Class Form1
         Me.btnInfo = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.imgTrafficLight = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.lblClickTurn = New System.Windows.Forms.Label()
         Me.pnlTitleBar.SuspendLayout()
         Me.pnlHeader.SuspendLayout()
         CType(Me.pudPauseDown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,6 +65,7 @@ Partial Class Form1
         '
         'pnlTitleBar
         '
+        Me.pnlTitleBar.Controls.Add(Me.lblClickTurn)
         Me.pnlTitleBar.Controls.Add(Me.btnInfo)
         Me.pnlTitleBar.Controls.Add(Me.lblSettingInfo)
         Me.pnlTitleBar.Controls.Add(Me.lblClickEnabled)
@@ -301,6 +303,17 @@ Partial Class Form1
         Me.Guna2PictureBox1.TabIndex = 11
         Me.Guna2PictureBox1.TabStop = False
         '
+        'lblClickTurn
+        '
+        Me.lblClickTurn.BackColor = System.Drawing.Color.Transparent
+        Me.lblClickTurn.Font = New System.Drawing.Font("微軟正黑體", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.lblClickTurn.Location = New System.Drawing.Point(92, 98)
+        Me.lblClickTurn.Name = "lblClickTurn"
+        Me.lblClickTurn.Size = New System.Drawing.Size(170, 16)
+        Me.lblClickTurn.TabIndex = 19
+        Me.lblClickTurn.Text = "連點次數：0"
+        Me.lblClickTurn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -341,4 +354,5 @@ Partial Class Form1
     Friend WithEvents lblClickEnabled As Label
     Friend WithEvents imgTrafficLight As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents btnInfo As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents lblClickTurn As Label
 End Class
