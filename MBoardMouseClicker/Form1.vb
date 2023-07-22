@@ -171,6 +171,10 @@ Public Class Form1
         tmrClicker.Enabled = Not (tmrClicker.Enabled)
     End Sub
 
+    Private Sub btnInfo_Click(sender As Object, e As EventArgs) Handles btnInfo.Click
+        frmInfobox.show
+    End Sub
+
     ' 啟動鍵盤鉤子
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' 建立委派實例

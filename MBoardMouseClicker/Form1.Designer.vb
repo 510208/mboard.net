@@ -42,7 +42,7 @@ Partial Class Form1
         Me.btnStart = New Guna.UI2.WinForms.Guna2Button()
         Me.tmrClicker = New System.Windows.Forms.Timer(Me.components)
         Me.Guna2ColorTransition1 = New Guna.UI2.WinForms.Guna2ColorTransition(Me.components)
-        Me.Guna2ImageButton1 = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.btnInfo = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.imgTrafficLight = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnlTitleBar.SuspendLayout()
@@ -64,7 +64,7 @@ Partial Class Form1
         '
         'pnlTitleBar
         '
-        Me.pnlTitleBar.Controls.Add(Me.Guna2ImageButton1)
+        Me.pnlTitleBar.Controls.Add(Me.btnInfo)
         Me.pnlTitleBar.Controls.Add(Me.lblSettingInfo)
         Me.pnlTitleBar.Controls.Add(Me.lblClickEnabled)
         Me.pnlTitleBar.Controls.Add(Me.imgTrafficLight)
@@ -263,19 +263,19 @@ Partial Class Form1
         '
         Me.Guna2ColorTransition1.ColorArray = New System.Drawing.Color() {System.Drawing.Color.Red, System.Drawing.Color.Blue, System.Drawing.Color.Orange}
         '
-        'Guna2ImageButton1
+        'btnInfo
         '
-        Me.Guna2ImageButton1.BackgroundImage = Global.MBoardMouseClicker.My.Resources.Resources.info
-        Me.Guna2ImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Guna2ImageButton1.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.Guna2ImageButton1.HoverState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.Guna2ImageButton1.ImageOffset = New System.Drawing.Point(0, 0)
-        Me.Guna2ImageButton1.ImageRotate = 0!
-        Me.Guna2ImageButton1.Location = New System.Drawing.Point(221, 237)
-        Me.Guna2ImageButton1.Name = "Guna2ImageButton1"
-        Me.Guna2ImageButton1.PressedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.Guna2ImageButton1.Size = New System.Drawing.Size(41, 33)
-        Me.Guna2ImageButton1.TabIndex = 18
+        Me.btnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnInfo.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btnInfo.HoverState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btnInfo.Image = Global.MBoardMouseClicker.My.Resources.Resources.info
+        Me.btnInfo.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.btnInfo.ImageRotate = 0!
+        Me.btnInfo.Location = New System.Drawing.Point(222, 237)
+        Me.btnInfo.Name = "btnInfo"
+        Me.btnInfo.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btnInfo.Size = New System.Drawing.Size(40, 35)
+        Me.btnInfo.TabIndex = 18
         '
         'imgTrafficLight
         '
@@ -291,6 +291,7 @@ Partial Class Form1
         '
         'Guna2PictureBox1
         '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.Image = Global.MBoardMouseClicker.My.Resources.Resources.MBoard
         Me.Guna2PictureBox1.ImageRotate = 0!
         Me.Guna2PictureBox1.Location = New System.Drawing.Point(0, 0)
@@ -339,5 +340,5 @@ Partial Class Form1
     Friend WithEvents lblSettingInfo As Label
     Friend WithEvents lblClickEnabled As Label
     Friend WithEvents imgTrafficLight As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents Guna2ImageButton1 As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents btnInfo As Guna.UI2.WinForms.Guna2ImageButton
 End Class
