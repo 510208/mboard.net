@@ -310,6 +310,7 @@ Partial Class Form1
         '
         'tmrClicker
         '
+        Me.tmrClicker.Interval = 5
         '
         'Guna2ColorTransition1
         '
