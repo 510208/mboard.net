@@ -5,7 +5,7 @@ Public Class Form1
 
     Dim nOldWndLeft, nOldWndTop, nClickX, nClickY As Integer
     Dim clickButton, countClickTurn As Integer
-    Dim hookButton As Keys = Keys.F6
+    Private HookedKey As Keys = Keys.F6 ' 要hook的按鍵，預設為 F6
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs)
         End
@@ -93,6 +93,7 @@ Public Class Form1
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         cbbButton.SelectedIndex = 0
         Me.TopMost = True
+        frmInfobox.Icon = Icon
         imgTrafficLight.Image = My.Resources.redLight
         lblClickEnabled.Text = "中斷連點"
         lblSettingInfo.Text = $"{tmrClicker.Interval.ToString}/左鍵/SingleClick/F6"
@@ -160,7 +161,7 @@ Public Class Form1
     ' 處理鍵盤事件
     Private Function KeyboardHookProc(ByVal nCode As Integer, ByVal wParam As Integer, ByRef lParam As KBDLLHOOKSTRUCT) As Integer
         ' 檢查是否按下F6鍵
-        If nCode = 0 AndAlso (wParam = WM_KEYDOWN OrElse wParam = WM_SYSKEYDOWN) AndAlso lParam.vkCode = Keys.F6 Then
+        If nCode = 0 AndAlso (wParam = WM_KEYDOWN OrElse wParam = WM_SYSKEYDOWN) AndAlso lParam.vkCode = CInt(HookedKey) Then
             ' 執行 checkClick 函數
             checkClick()
         End If
@@ -186,7 +187,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnInfo_Click(sender As Object, e As EventArgs) Handles btnInfo.Click
-        frmInfobox.show
+        frmInfobox.Show()
     End Sub
 
     ' 啟動鍵盤鉤子

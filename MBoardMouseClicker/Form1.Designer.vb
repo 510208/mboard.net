@@ -23,14 +23,19 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
         Me.pnlTitleBar = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lblClickTurn = New System.Windows.Forms.Label()
+        Me.btnInfo = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.lblSettingInfo = New System.Windows.Forms.Label()
         Me.lblClickEnabled = New System.Windows.Forms.Label()
+        Me.imgTrafficLight = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbbButton = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnlHeader = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
@@ -42,15 +47,11 @@ Partial Class Form1
         Me.btnStart = New Guna.UI2.WinForms.Guna2Button()
         Me.tmrClicker = New System.Windows.Forms.Timer(Me.components)
         Me.Guna2ColorTransition1 = New Guna.UI2.WinForms.Guna2ColorTransition(Me.components)
-        Me.btnInfo = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.imgTrafficLight = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.lblClickTurn = New System.Windows.Forms.Label()
         Me.pnlTitleBar.SuspendLayout()
-        Me.pnlHeader.SuspendLayout()
-        CType(Me.pudPauseDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgTrafficLight, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlHeader.SuspendLayout()
+        CType(Me.pudPauseDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Elipse1
@@ -85,6 +86,31 @@ Partial Class Form1
         Me.pnlTitleBar.Size = New System.Drawing.Size(274, 284)
         Me.pnlTitleBar.TabIndex = 2
         '
+        'lblClickTurn
+        '
+        Me.lblClickTurn.BackColor = System.Drawing.Color.Transparent
+        Me.lblClickTurn.Font = New System.Drawing.Font("微軟正黑體", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.lblClickTurn.Location = New System.Drawing.Point(92, 98)
+        Me.lblClickTurn.Name = "lblClickTurn"
+        Me.lblClickTurn.Size = New System.Drawing.Size(170, 16)
+        Me.lblClickTurn.TabIndex = 19
+        Me.lblClickTurn.Text = "連點次數：0"
+        Me.lblClickTurn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'btnInfo
+        '
+        Me.btnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnInfo.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btnInfo.HoverState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btnInfo.Image = Global.MBoardMouseClicker.My.Resources.Resources.info
+        Me.btnInfo.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.btnInfo.ImageRotate = 0!
+        Me.btnInfo.Location = New System.Drawing.Point(222, 237)
+        Me.btnInfo.Name = "btnInfo"
+        Me.btnInfo.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btnInfo.Size = New System.Drawing.Size(40, 35)
+        Me.btnInfo.TabIndex = 18
+        '
         'lblSettingInfo
         '
         Me.lblSettingInfo.BackColor = System.Drawing.Color.Transparent
@@ -105,6 +131,18 @@ Partial Class Form1
         Me.lblClickEnabled.TabIndex = 16
         Me.lblClickEnabled.Text = "中斷連點"
         Me.lblClickEnabled.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'imgTrafficLight
+        '
+        Me.imgTrafficLight.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.imgTrafficLight.Image = Global.MBoardMouseClicker.My.Resources.Resources.redLight
+        Me.imgTrafficLight.ImageRotate = 0!
+        Me.imgTrafficLight.Location = New System.Drawing.Point(16, 45)
+        Me.imgTrafficLight.Name = "imgTrafficLight"
+        Me.imgTrafficLight.Size = New System.Drawing.Size(69, 69)
+        Me.imgTrafficLight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imgTrafficLight.TabIndex = 15
+        Me.imgTrafficLight.TabStop = False
         '
         'Label3
         '
@@ -142,6 +180,18 @@ Partial Class Form1
         Me.cbbButton.Name = "cbbButton"
         Me.cbbButton.Size = New System.Drawing.Size(135, 36)
         Me.cbbButton.TabIndex = 12
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = Global.MBoardMouseClicker.My.Resources.Resources.MBoard
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(24, 24)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox1.TabIndex = 11
+        Me.Guna2PictureBox1.TabStop = False
         '
         'pnlHeader
         '
@@ -265,55 +315,6 @@ Partial Class Form1
         '
         Me.Guna2ColorTransition1.ColorArray = New System.Drawing.Color() {System.Drawing.Color.Red, System.Drawing.Color.Blue, System.Drawing.Color.Orange}
         '
-        'btnInfo
-        '
-        Me.btnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnInfo.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.btnInfo.HoverState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.btnInfo.Image = Global.MBoardMouseClicker.My.Resources.Resources.info
-        Me.btnInfo.ImageOffset = New System.Drawing.Point(0, 0)
-        Me.btnInfo.ImageRotate = 0!
-        Me.btnInfo.Location = New System.Drawing.Point(222, 237)
-        Me.btnInfo.Name = "btnInfo"
-        Me.btnInfo.PressedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.btnInfo.Size = New System.Drawing.Size(40, 35)
-        Me.btnInfo.TabIndex = 18
-        '
-        'imgTrafficLight
-        '
-        Me.imgTrafficLight.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.imgTrafficLight.Image = Global.MBoardMouseClicker.My.Resources.Resources.redLight
-        Me.imgTrafficLight.ImageRotate = 0!
-        Me.imgTrafficLight.Location = New System.Drawing.Point(16, 45)
-        Me.imgTrafficLight.Name = "imgTrafficLight"
-        Me.imgTrafficLight.Size = New System.Drawing.Size(69, 69)
-        Me.imgTrafficLight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.imgTrafficLight.TabIndex = 15
-        Me.imgTrafficLight.TabStop = False
-        '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.Image = Global.MBoardMouseClicker.My.Resources.Resources.MBoard
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(24, 24)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox1.TabIndex = 11
-        Me.Guna2PictureBox1.TabStop = False
-        '
-        'lblClickTurn
-        '
-        Me.lblClickTurn.BackColor = System.Drawing.Color.Transparent
-        Me.lblClickTurn.Font = New System.Drawing.Font("微軟正黑體", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.lblClickTurn.Location = New System.Drawing.Point(92, 98)
-        Me.lblClickTurn.Name = "lblClickTurn"
-        Me.lblClickTurn.Size = New System.Drawing.Size(170, 16)
-        Me.lblClickTurn.TabIndex = 19
-        Me.lblClickTurn.Text = "連點次數：0"
-        Me.lblClickTurn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -321,13 +322,14 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(274, 284)
         Me.Controls.Add(Me.pnlTitleBar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.pnlTitleBar.ResumeLayout(False)
-        Me.pnlHeader.ResumeLayout(False)
-        CType(Me.pudPauseDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgTrafficLight, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlHeader.ResumeLayout(False)
+        CType(Me.pudPauseDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
