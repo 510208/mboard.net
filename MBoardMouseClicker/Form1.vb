@@ -11,7 +11,7 @@ Public Class Form1
         End
     End Sub
 
-    Private Sub btnEnd_Click(sender As Object, e As EventArgs)
+    Private Sub btnEnd_Click(sender As Object, e As EventArgs) Handles btnEnd.Click
         btnEnd.ForeColor = Color.FromArgb(255, 128, 128)
         End
     End Sub

@@ -30,6 +30,7 @@ Partial Class frmLaunchInfo
         Me.btnOkay = New System.Windows.Forms.Button()
         Me.rtbThanks = New System.Windows.Forms.RichTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -52,6 +53,7 @@ Partial Class frmLaunchInfo
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.btnDecline)
         Me.Panel1.Controls.Add(Me.btnOkay)
         Me.Panel1.Controls.Add(Me.rtbThanks)
@@ -64,9 +66,9 @@ Partial Class frmLaunchInfo
         '
         'btnDecline
         '
-        Me.btnDecline.Location = New System.Drawing.Point(92, 220)
+        Me.btnDecline.Location = New System.Drawing.Point(103, 220)
         Me.btnDecline.Name = "btnDecline"
-        Me.btnDecline.Size = New System.Drawing.Size(75, 23)
+        Me.btnDecline.Size = New System.Drawing.Size(64, 23)
         Me.btnDecline.TabIndex = 3
         Me.btnDecline.Text = "拒絕(&D)"
         Me.btnDecline.UseVisualStyleBackColor = True
@@ -100,6 +102,15 @@ Partial Class frmLaunchInfo
         Me.Label1.Text = "歡迎使用MBoard"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(0, 220)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(97, 23)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "作者專案頁面"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmLaunchInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -123,4 +134,5 @@ Partial Class frmLaunchInfo
     Friend WithEvents Label1 As Label
     Friend WithEvents btnDecline As Button
     Friend WithEvents btnOkay As Button
+    Friend WithEvents Button1 As Button
 End Class

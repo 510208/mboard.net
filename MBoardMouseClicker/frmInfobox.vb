@@ -1,6 +1,13 @@
 ﻿Public Class frmInfobox
 
     Dim nOldWndLeft, nOldWndTop, nClickX, nClickY As Integer
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        frmLaunchInfo.Show()
+        Me.Hide()
+        My.Settings.ShowInfobox = True
+    End Sub
+
     Private Sub pnlHeader_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlHeader.MouseDown
         '紀錄滑鼠點選時的視窗位置與滑鼠點選位置
         nOldWndLeft = Me.Left

@@ -14,4 +14,8 @@
         Me.Close()
         End
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Shell("Rundll32.exe url.dll, FileProtocolHandler HTTPS://github.com/510208", vbNormalFocus)
+    End Sub
 End Class
