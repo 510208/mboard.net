@@ -45,7 +45,7 @@ Partial Class frmLaunch
         '
         'fadeTimer
         '
-        Me.fadeTimer.Interval = 50
+        Me.fadeTimer.Interval = 1
         '
         'frmLaunch
         '

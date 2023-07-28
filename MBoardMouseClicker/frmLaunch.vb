@@ -2,8 +2,8 @@
 
 Public Class frmLaunch
     Dim fadeStep As Integer = 0
-    Dim fadeDuration As Integer = 20 ' 总共的时间步数，即 1 秒内的 50 毫秒间隔数
-    Dim fadeDelay As Integer = 40 ' 2 秒的间隔时间，即 40 * 50 毫秒
+    Dim fadeDuration As Integer = 100 ' 总共的时间步数，即 1 秒内的 50 毫秒间隔数
+    Dim fadeDelay As Integer = 80 ' 2 秒的间隔时间，即 40 * 50 毫秒
 
     Private Sub frmLaunch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.DoubleBuffered = True ' 启用双缓冲以避免闪烁
@@ -24,11 +24,19 @@ Public Class frmLaunch
             fadeStep += 1
             Me.Opacity = 1 - (fadeStep - fadeDuration - fadeDelay) / fadeDuration
         Else
+            For i = 1 To 50
+                ' 淡出效果
+                fadeStep += 1
+                Me.Opacity = 1 - (fadeStep - fadeDuration - fadeDelay) / fadeDuration
+            Next
+
             fadeTimer.Stop() ' 停止 Timer 控件
 
-            ' 显示 Form1
-            Dim form1 As New Form1()
-            form1.Show()
+            If My.Settings.ShowInfobox Then
+                frmLaunchInfo.Show()
+            Else
+                Form1.Show()
+            End If
 
             Me.Close() ' 关闭表单
         End If
