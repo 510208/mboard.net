@@ -107,12 +107,19 @@
     <Compile Include="frmInfobox.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmLaunch.Designer.vb">
+      <DependentUpon>frmLaunch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLaunch.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MManip.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -131,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInfobox.resx">
       <DependentUpon>frmInfobox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLaunch.resx">
+      <DependentUpon>frmLaunch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -166,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MBoard.ico" />
+    <None Include="Resources\MBoard.png" />
     <None Include="Resources\logo.png" />
     <None Include="Resources\info.png" />
   </ItemGroup>
