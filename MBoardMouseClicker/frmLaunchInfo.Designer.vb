@@ -82,10 +82,11 @@ Partial Class frmLaunchInfo
         '
         'rtbThanks
         '
+        Me.rtbThanks.BackColor = System.Drawing.SystemColors.Control
         Me.rtbThanks.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.rtbThanks.Location = New System.Drawing.Point(11, 41)
+        Me.rtbThanks.Location = New System.Drawing.Point(0, 41)
         Me.rtbThanks.Name = "rtbThanks"
-        Me.rtbThanks.Size = New System.Drawing.Size(237, 173)
+        Me.rtbThanks.Size = New System.Drawing.Size(260, 173)
         Me.rtbThanks.TabIndex = 1
         Me.rtbThanks.Text = ""
         '
