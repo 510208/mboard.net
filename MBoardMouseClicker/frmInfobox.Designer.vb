@@ -30,6 +30,7 @@ Partial Class frmInfobox
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.pnlHeader.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,15 +106,32 @@ Partial Class frmInfobox
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
         Me.Guna2Button1.Location = New System.Drawing.Point(12, 112)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(186, 36)
+        Me.Guna2Button1.Size = New System.Drawing.Size(114, 36)
         Me.Guna2Button1.TabIndex = 16
         Me.Guna2Button1.Text = "作者的信"
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.BorderRadius = 10
+        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button2.FillColor = System.Drawing.Color.Navy
+        Me.Guna2Button2.Font = New System.Drawing.Font("微軟正黑體", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.Location = New System.Drawing.Point(132, 112)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(66, 36)
+        Me.Guna2Button2.TabIndex = 17
+        Me.Guna2Button2.Text = "更新"
         '
         'frmInfobox
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(210, 160)
+        Me.Controls.Add(Me.Guna2Button2)
         Me.Controls.Add(Me.Guna2Button1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.pnlHeader)
@@ -134,4 +152,5 @@ Partial Class frmInfobox
     Friend WithEvents btnEnd As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
 End Class

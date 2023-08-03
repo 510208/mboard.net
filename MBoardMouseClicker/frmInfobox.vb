@@ -2,10 +2,13 @@
 
     Dim nOldWndLeft, nOldWndTop, nClickX, nClickY As Integer
 
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        frmUpdate.Show()
+    End Sub
+
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         frmLaunchInfo.Show()
         Me.Hide()
-        My.Settings.ShowInfobox = True
     End Sub
 
     Private Sub pnlHeader_MouseDown(sender As Object, e As MouseEventArgs) Handles pnlHeader.MouseDown

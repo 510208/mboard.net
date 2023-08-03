@@ -31,12 +31,7 @@ Public Class frmLaunch
             Next
 
             fadeTimer.Stop() ' 停止 Timer 控件
-
-            If My.Settings.ShowInfobox Then
-                frmLaunchInfo.Show()
-            Else
-                Form1.Show()
-            End If
+            Form1.Show()
 
             Me.Close() ' 关闭表单
         End If
