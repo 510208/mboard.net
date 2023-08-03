@@ -325,7 +325,7 @@ Partial Class Form1
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "MBoard Main GUI"
         Me.pnlTitleBar.ResumeLayout(False)
         CType(Me.imgTrafficLight, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

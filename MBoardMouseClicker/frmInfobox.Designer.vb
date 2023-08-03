@@ -137,6 +137,7 @@ Partial Class frmInfobox
         Me.Controls.Add(Me.pnlHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmInfobox"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmInfobox"
         Me.pnlHeader.ResumeLayout(False)
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

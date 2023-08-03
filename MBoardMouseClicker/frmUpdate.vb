@@ -1,8 +1,5 @@
 ﻿Imports System.Diagnostics
 Imports Markdig
-#Disable Warning BC40056 ' Imports 陳述式中指定的命名空間或類型，不包含任何 Public 成員，或找不到該命名空間或類型
-Imports TheArtOfDev.HtmlRenderer.WinForms
-#Enable Warning BC40056 ' Imports 陳述式中指定的命名空間或類型，不包含任何 Public 成員，或找不到該命名空間或類型
 Imports System.IO
 
 Public Class frmUpdate
@@ -11,15 +8,14 @@ Public Class frmUpdate
     Private Sub frmUpdate_Actived(sender As Object, e As EventArgs) Handles MyBase.Activated
         ' 调用Python脚本并获取更新日志和最新版本
         Dim i As String = RunPythonScript()
-
     End Sub
 
     Private Function RunPythonScript() As String
         Dim owner As String = "510208"
         Dim repo As String = "mboard.net"
-        Dim pythonScript As String = "update.py"
+        Dim pythonScript As String = "update.exe"
 
-        Dim processInfo As New ProcessStartInfo("python.exe", $"{pythonScript} {owner} {repo}")
+        Dim processInfo As New ProcessStartInfo("update.exe")
         processInfo.CreateNoWindow = True
         processInfo.UseShellExecute = False
         processInfo.RedirectStandardOutput = True
@@ -35,13 +31,15 @@ Public Class frmUpdate
         Dim lines As String() = result.Split(Environment.NewLine.ToCharArray(), 2)
 
         ' 获取最新版本
-        If lines(0) > latestVer Then
+        If lines(0) > latestVer Then ' 需要更新
             latestVer = lines(0)
             lblVersion.Text = $"最新版本：{latestVer}"
             lblVersion.ForeColor = ColorTranslator.FromOle(QBColor(4))
-        Else
+            btnUpdate.Enabled = True
+        Else                          ' 不需更新
             lblVersion.Text = $"最新版本：{latestVer}(不需更新)"
             lblVersion.ForeColor = ColorTranslator.FromOle(QBColor(2))
+            btnUpdate.Enabled = False
         End If
 
         lblNowVersion.Text = My.Application.Info.Version.ToString
@@ -56,4 +54,11 @@ Public Class frmUpdate
 
     End Function
 
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        Shell("explorer https://github.com/510208/mboard.net/releases/latest ", vbNormalFocus)
+    End Sub
+
+    Private Sub btnNoUpdate_Click(sender As Object, e As EventArgs) Handles btnNoUpdate.Click
+        Me.Close()
+    End Sub
 End Class

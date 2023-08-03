@@ -22,6 +22,7 @@ Partial Class frmUpdate
     '請勿使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmUpdate))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblVersion = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -48,7 +49,7 @@ Partial Class frmUpdate
         '
         'lblVersion
         '
-        Me.lblVersion.Font = New System.Drawing.Font("微軟正黑體", 22.0!)
+        Me.lblVersion.Font = New System.Drawing.Font("微軟正黑體", 22.0!, System.Drawing.FontStyle.Bold)
         Me.lblVersion.Location = New System.Drawing.Point(12, 9)
         Me.lblVersion.Name = "lblVersion"
         Me.lblVersion.Size = New System.Drawing.Size(491, 37)
@@ -126,8 +127,9 @@ Partial Class frmUpdate
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmUpdate"
-        Me.Text = "frmUpdate"
+        Me.Text = "更新檢查器 GUI"
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()

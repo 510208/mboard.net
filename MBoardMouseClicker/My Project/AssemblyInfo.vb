@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 設為預設，如下所示:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("2.0.2.1")>
-<Assembly: AssemblyFileVersion("2.0.2.1")>
+<Assembly: AssemblyVersion("2.0.2.2")>
+<Assembly: AssemblyFileVersion("2.0.2.2")>
