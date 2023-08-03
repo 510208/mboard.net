@@ -33,4 +33,4 @@ if latest_version and changelog:
     print(latest_version)
     print(changelog)
 else:
-    print("No releases found for the repository.")
+    print("該儲存庫應該已經移除了版本，檢查該儲存庫是否仍然維護中！")
