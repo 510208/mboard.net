@@ -1,5 +1,7 @@
 # MBoard Mouse Clicker.NET
 
+### **提示：**  詳細資訊：[網址](https://510208.github.io/docu/docs/category/mboard-mouse-clicker)
+
 ![GitHub License](https://img.shields.io/github/license/510208/mboard.net)
 ![GitHub Stars](https://img.shields.io/github/stars/510208/mboard.net)
 ![GitHub Forks](https://img.shields.io/github/forks/510208/mboard.net)
